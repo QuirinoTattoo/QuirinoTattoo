@@ -1,5 +1,5 @@
 # Vitor Quirino · site
-Site público: https://quirinotattoo.github.io/
+Site público: https://quirinotattoo.github.io/QuirinoTattoo/
 Hospedagem pelo GitHub Pages. Textos, estilos, fotos e avaliações são guardados no Firebase Firestore.
 
 ## Acesso do artista
