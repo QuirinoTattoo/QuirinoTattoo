@@ -4,7 +4,7 @@ service cloud.firestore {
     function isArtist() {
       return request.auth != null
         && request.auth.token.email_verified == true
-        && request.auth.token.email == '__ARTIST_EMAIL__';
+        && request.auth.token.email == 'sk.fln1@hotmail.com';
     }
     match /siteContent/{id} {
       allow get: if id == 'main';

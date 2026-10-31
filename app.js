@@ -4,7 +4,7 @@ import { getFirestore, collection, doc, getDoc, onSnapshot, orderBy, query, serv
 
 const firebaseConfig = {apiKey:"AIzaSyCa3ggMQlAF3_odu_hZEBSK4M1eu9nDNFg",authDomain:"savana-tatto.firebaseapp.com",projectId:"savana-tatto",storageBucket:"savana-tatto.firebasestorage.app",messagingSenderId:"639722594923",appId:"1:639722594923:web:07272ef35e6b3f605ec72e",measurementId:"G-PVP8YMLWZY"};
 // Replace when Quirino's email arrives. Firebase rules use the same allowlist.
-const ARTIST_EMAIL = "__ARTIST_EMAIL__";
+const ARTIST_EMAIL = "sk.fln1@hotmail.com";
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
 const $=id=>document.getElementById(id), reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const CONTENT=doc(db,'siteContent','main'),MEDIA=collection(db,'siteMedia'),ASSETS=collection(db,'siteAssets'),REVIEWS=collection(db,'reviews');
