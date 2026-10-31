@@ -1,9 +1,10 @@
+Warning: fs was declared with const; use let for reassignable variables.
 <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#101210">
-  <meta name="description" content="Vitor Quirino — tatuagem autoral em Lauro de Freitas, Bahia. Blackwork, anime e projetos pensados junto com você.">
+  \n  \n  <meta property="og:type" content="website">\n  <meta property="og:title" content="Vitor Quirino · Tatuagem autoral">\n  <meta property="og:description" content="Tatuagem autoral, blackwork e anime em Lauro de Freitas, Bahia.">\n  <meta property="og:url" content="https://quirinotattoo.github.io/QuirinoTattoo/">\n  <meta property="og:image" content="https://quirinotattoo.github.io/QuirinoTattoo/assets/quirino-logo.webp">\n  <meta name="twitter:card" content="summary_large_image">
   <title>Vitor Quirino · Tatuagem autoral</title>
   <meta name="description" content="Tatuagem autoral, blackwork e anime com Vitor Quirino, em Lauro de Freitas, Bahia. Conheça o portfólio e fale pelo WhatsApp.">
   <link rel="canonical" href="https://quirinotattoo.github.io/QuirinoTattoo/">
@@ -42,12 +43,112 @@
     .album-dialog{width:min(980px,calc(100% - 28px));max-height:88vh;padding:0;border:1px solid #4a4e46;background:#141714;color:var(--ink);box-shadow:0 30px 120px #000}.album-dialog::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(7px)}.album-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px 20px;background:#141714;border-bottom:1px solid var(--line)}.album-head h2{margin:0;font:600 22px var(--serif)}.album-close{border:1px solid var(--line);background:transparent;color:var(--ink);padding:9px 12px;cursor:pointer}.album-images{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:14px}.album-images img{width:100%;height:280px;object-fit:cover}.album-note{padding:20px;color:var(--muted);font-size:13px}
     @media(max-width:950px){.insta-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.insta-embed{height:480px}}
     @media(max-width:700px){.album-images{grid-template-columns:1fr 1fr}.album-images img{height:170px}.insta-grid{grid-template-columns:1fr}.insta-embed{height:500px}.award-gallery{grid-template-columns:repeat(2,1fr)}}
-  </style>
+  
+/* Editorial layer: brand mark, loader, mobile portrait and in-page editing */
+[hidden]{display:none!important}
+.hdr,.main,main,footer{position:relative;z-index:1}
+.mark{gap:10px}.mark-logo{display:block!important;width:43px;height:43px;object-fit:contain;background:transparent!important;border:0!important;box-shadow:none!important;filter:drop-shadow(0 0 5px rgba(26,151,255,.55)) drop-shadow(0 0 13px rgba(13,92,255,.28));animation:logoGlow 4.2s ease-in-out infinite}
+@keyframes logoGlow{0%,100%{filter:drop-shadow(0 0 4px rgba(26,151,255,.45)) drop-shadow(0 0 10px rgba(13,92,255,.22))}50%{filter:drop-shadow(0 0 8px rgba(65,191,255,.9)) drop-shadow(0 0 20px rgba(13,92,255,.48))}}
+.mark-symbol{border:0;background:transparent;color:#8fe7ff;text-shadow:0 0 13px #228bff}
+.artist-login{width:40px;height:40px;flex:none;display:grid;place-items:center;padding:0;border:1px solid rgba(90,173,255,.34);border-radius:50%;background:rgba(20,50,88,.22);color:#8fdbff;cursor:pointer;transition:transform .3s,box-shadow .3s,border-color .3s}
+.artist-login:hover{transform:rotate(-9deg) scale(1.08);border-color:#7acfff;box-shadow:0 0 20px rgba(41,147,255,.38)}
+.artist-login svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+.logo-watermark{position:fixed;inset:0;z-index:0;pointer-events:none;background:url("assets/quirino-logo.webp") center 47%/min(58vw,620px) auto no-repeat;opacity:.035;mix-blend-mode:screen;animation:watermarkFloat 24s ease-in-out infinite alternate}
+@keyframes watermarkFloat{from{transform:translateY(8px) scale(.985)}to{transform:translateY(-9px) scale(1.015)}}
+.site-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 45%,#121a2b,#07090c 72%);color:#e7f7ff;opacity:1;visibility:visible;transition:opacity .55s ease,visibility .55s ease}
+.site-loader.is-exiting{opacity:0;visibility:hidden;pointer-events:none}
+.loader-inner{width:min(280px,76vw);text-align:center}
+.loader-art{width:min(205px,62vw);margin:0 auto 10px;overflow:visible;filter:drop-shadow(0 0 18px rgba(35,147,255,.28))}
+.loader-art path,.loader-art circle{fill:none;stroke:#67caff;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:360;stroke-dashoffset:360;animation:inkDraw 1.45s cubic-bezier(.22,.7,.2,1) forwards}
+.loader-art .skull-detail{stroke:#b2e9ff;animation-delay:.28s}
+.loader-art .tattoo-stroke{stroke:#d99573;stroke-dasharray:100;stroke-dashoffset:100;animation:inkDraw .8s .85s ease-out forwards}
+.loader-art .star-glint{stroke:#a9edff;stroke-dasharray:32;stroke-dashoffset:32;animation:inkDraw .45s 1.15s ease-out forwards}
+@keyframes inkDraw{to{stroke-dashoffset:0}}
+.loader-title{margin:0;color:#f1eee7;font:600 11px var(--wide);letter-spacing:.24em;text-transform:uppercase}
+.loader-caption{display:block;margin-top:7px;color:#81bfe0;font:500 8px var(--wide);letter-spacing:.18em;text-transform:uppercase}
+.loader-line{height:1px;margin:18px auto 0;max-width:155px;background:linear-gradient(90deg,transparent,#4fc9ff,transparent);transform-origin:left;animation:loaderPulse 1.4s ease-in-out infinite}
+@keyframes loaderPulse{0%,100%{transform:scaleX(.2);opacity:.45}50%{transform:scaleX(1);opacity:1}}
+.portrait-placeholder,.artist-portrait{position:relative;width:min(100%,290px);aspect-ratio:4/5;height:auto;overflow:hidden;border:1px solid rgba(86,164,226,.4);border-radius:150px 150px 8px 8px;background:radial-gradient(ellipse at 50% 34%,rgba(34,93,145,.28),transparent 62%),linear-gradient(160deg,#1b252d,#101210 72%);box-shadow:0 0 45px rgba(21,107,181,.12),inset 0 0 36px rgba(36,143,224,.07)}
+.portrait-placeholder{display:grid;place-items:center}
+.portrait-placeholder:after{content:"";position:absolute;inset:11px;border:1px solid rgba(137,208,255,.22);border-radius:140px 140px 4px 4px;pointer-events:none}
+.portrait-figure{width:100%;height:100%;padding:22px;opacity:.86;animation:portraitBreath 5s ease-in-out infinite}
+.portrait-figure path,.portrait-figure circle{fill:none;stroke:#78caff;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.portrait-label{position:absolute;z-index:2;bottom:25px;color:#d7e7ee;font:600 8px var(--wide);letter-spacing:.2em;text-transform:uppercase}
+.artist-portrait{object-fit:cover;object-position:50% 22%;animation:portraitReveal .8s cubic-bezier(.2,.7,.2,1) both;box-shadow:0 12px 40px rgba(0,0,0,.3),0 0 32px rgba(29,121,192,.13)}
+@keyframes portraitBreath{0%,100%{transform:translateY(2px);opacity:.68}50%{transform:translateY(-3px);opacity:.95}}
+@keyframes portraitReveal{from{opacity:0;transform:scale(.96);filter:blur(5px)}to{opacity:1;transform:scale(1);filter:none}}
+.about-aside{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.about-aside .initials{display:none!important}
+.about-aside .hero-foot{margin-top:0}
+.about-aside .lab{margin-bottom:0}
+.about-aside .portrait-placeholder{margin-top:5px}
+.style-card,.portfolio-card,.care-card,.review-item{will-change:transform}
+.style-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),background .3s,padding .3s}
+.style-card:hover{transform:translateY(-5px)}
+.hero-visual{isolation:isolate}
+.hero-visual:before{content:"";position:absolute;z-index:1;inset:18px;border:1px solid rgba(111,196,255,.12);pointer-events:none;animation:framePulse 5.4s ease-in-out infinite}
+@keyframes framePulse{0%,100%{opacity:.25}50%{opacity:.9}}
+.artist-ribbon{position:fixed;z-index:1001;left:50%;bottom:16px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;max-width:calc(100vw - 24px);padding:8px 10px 8px 14px;border:1px solid rgba(107,186,235,.32);border-radius:999px;background:rgba(12,17,23,.93);box-shadow:0 12px 36px rgba(0,0,0,.35),0 0 18px rgba(37,137,203,.13);backdrop-filter:blur(14px);white-space:nowrap}
+.artist-ribbon span{color:#dbebf3;font:600 9px var(--wide);letter-spacing:.08em;text-transform:uppercase}
+.artist-ribbon button{border:0;border-radius:999px;padding:8px 12px;background:rgba(43,116,159,.28);color:#9fe2ff;font:600 9px var(--wide);letter-spacing:.04em;cursor:pointer}
+.artist-ribbon button:hover{background:rgba(43,145,200,.42)}
+.site-dialog{width:min(500px,calc(100vw - 28px));max-height:min(90dvh,880px);margin:auto;padding:32px;border:1px solid rgba(109,186,235,.32);border-radius:16px;background:linear-gradient(145deg,#1b2229,#121512 76%);color:var(--ink);box-shadow:0 30px 100px rgba(0,0,0,.65),0 0 35px rgba(39,135,193,.12);overflow:auto}
+.site-dialog::backdrop{background:rgba(4,7,11,.78);backdrop-filter:blur(12px)}
+.login-dialog{position:relative}
+.login-dialog h2,.editor-dialog h2{margin:8px 0 12px;font:600 clamp(32px,7vw,46px)/1 var(--wide);letter-spacing:-.07em}
+.login-dialog>p:not(.lab):not(.admin-notice){max-width:400px;color:var(--muted);font-size:13px}
+.dialog-x{width:38px;height:38px;display:inline-grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);font-size:22px;cursor:pointer}
+.login-dialog>.dialog-x{position:absolute;top:20px;right:20px}
+.dialog-x:hover{border-color:#6cbce9;color:#9fe2ff}
+.editor-form{display:grid;gap:16px}
+.fld{display:grid;gap:6px;color:#d5d7d0;font:600 9px var(--wide);letter-spacing:.1em;text-transform:uppercase}
+.fld input,.fld textarea,.fld select{width:100%;min-height:45px;padding:11px 13px;border:1px solid #414b50;border-radius:7px;background:#0e1112;color:var(--ink);outline:none;font:400 13px var(--sans);letter-spacing:normal;text-transform:none}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:#61b9ed;box-shadow:0 0 0 3px rgba(74,169,223,.12)}
+.login-dialog .btn,.editor-dialog .btn{min-height:46px;border-radius:7px}
+.text-button{padding:4px 0;border:0;background:none;color:#8fd7ff;font:600 10px var(--wide);text-align:left;cursor:pointer}
+.text-button:hover{text-decoration:underline}
+.admin-notice{min-height:18px;margin:4px 0 0;color:#9fc9dc;font-size:11px;line-height:1.55}
+.admin-notice.toast-error{color:#ffad92}
+.editor-dialog{width:min(990px,calc(100vw - 28px));max-height:92dvh;padding:24px 28px}
+.editor-header{position:sticky;z-index:5;top:-24px;display:flex;justify-content:space-between;align-items:center;gap:16px;margin:-24px -28px 16px;padding:18px 25px;border-bottom:1px solid var(--line);background:rgba(20,24,23,.97);backdrop-filter:blur(12px)}
+.editor-header>div:last-child{display:flex;align-items:center;gap:12px}
+.editor-header .lab{margin:0}
+.editor-header h2{font-size:32px;margin:5px 0 0}
+.editor-hint{color:var(--muted);font-size:11px}
+.editor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:16px 0 18px}
+.editor-grid .wide,.editor-form details.wide{grid-column:1/-1}
+.editor-form details{border-top:1px solid var(--line);padding-top:13px}
+.editor-form summary{color:#eff1eb;font:600 11px var(--wide);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.check-row{display:flex;align-items:center;gap:8px;color:var(--muted);font:500 10px var(--wide)}
+.check-row input{accent-color:#65bde9}
+.editor-save{position:sticky;bottom:-24px;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0 0;background:linear-gradient(transparent,var(--panel) 20%);border-top:1px solid var(--line)}
+.editor-media-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.editor-media{display:grid;gap:7px;min-width:0}
+.editor-media img{width:100%;aspect-ratio:1;object-fit:cover;border:1px solid var(--line);border-radius:5px}
+.editor-media span{overflow:hidden;color:var(--muted);font-size:9px;text-overflow:ellipsis;white-space:nowrap}
+.editor-media .danger{border:1px solid rgba(240,128,105,.4);background:transparent;color:#f29b82;font:600 9px var(--wide);padding:8px;cursor:pointer}
+.footer-login{padding:0;border:0;border-bottom:1px solid rgba(109,186,235,.4);background:none;color:#9fcde5;font:600 9px var(--wide);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.footer-login:hover{color:white;border-color:white}
+@media(max-width:950px){.editor-media-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){
+ .hdr-in{gap:8px}.mark{gap:6px}.mark-logo{width:37px;height:37px}.mark-copy strong{font-size:10px;letter-spacing:.07em}.mark-copy small{display:none}
+ .nav{display:flex;align-items:center;gap:7px}.nav .nav-cta{padding:9px 8px;font-size:8px;letter-spacing:.03em}.artist-login{width:35px;height:35px}
+ .logo-watermark{background-size:min(90vw,420px);opacity:.04}
+ .hero-visual:before{inset:11px}.about-aside{gap:14px}.portrait-placeholder,.artist-portrait{width:min(74vw,290px)}
+ .site-dialog{padding:25px 20px}.editor-dialog{padding:16px 16px}.editor-header{top:-16px;margin:-16px -16px 14px;padding:14px 16px}.editor-header h2{font-size:27px}
+ .editor-grid{grid-template-columns:1fr;gap:12px}.editor-grid .wide{grid-column:auto}.editor-media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .editor-save{bottom:-16px;align-items:flex-end}.artist-ribbon{gap:5px;padding:6px 7px 6px 10px}.artist-ribbon span{font-size:7px}.artist-ribbon button{padding:7px 8px;font-size:8px}
+}
+@media(max-width:365px){.nav{gap:4px}.nav .nav-cta{font-size:0;padding:9px 8px}.nav .nav-cta:after{content:"Briefing ↗";font-size:8px}.mark-copy strong{font-size:9px}.mark-logo{width:34px;height:34px}}
+@media(prefers-reduced-motion:reduce){
+ .mark-logo,.logo-watermark,.loader-art path,.loader-art circle,.loader-art .tattoo-stroke,.loader-art .star-glint,.loader-line,.portrait-figure,.hero-visual:before{animation:none!important}
+ .site-loader{transition-duration:.01ms}
+}\n  </style>
 </head>
-<body>
+<body>\n<div class="logo-watermark" aria-hidden="true"></div>\n<div class="site-loader" id="siteLoader" aria-hidden="false"><div class="loader-inner"><svg class="loader-art" viewBox="0 0 180 160" role="presentation"><path d="M90 18c-38 0-67 26-67 65 0 26 12 44 30 53l4 19h66l4-19c18-9 30-27 30-53 0-39-29-65-67-65Z"/><path class="skull-detail" d="M50 79c0-14 9-24 22-24s22 10 22 24-9 23-22 23-22-9-22-23Zm36 0c0-14 9-24 22-24s22 10 22 24-9 23-22 23-22-9-22-23ZM80 103l10 12 10-12m-24 22v17m14-17v17m14-17v17"/><path class="tattoo-stroke" d="M31 33c9 4 15 11 18 20m83 83c9-8 18-10 27-8m-98-88c8-5 17-8 27-9"/><path class="star-glint" d="M148 27v20m-10-10h20M25 112v16m-8-8h16"/></svg><p class="loader-title">Vitor Quirino</p><span class="loader-caption">Preparando a arte</span><div class="loader-line"></div></div></div>
 <header class="hdr"><div class="wrap hdr-in">
-  <a class="mark" href="#topo" aria-label="Vitor Quirino, início"><span class="mark-symbol" data-brand-mark>VQ</span><span class="mark-copy"><strong data-content="brand">Vitor Quirino</strong><small data-content="studio" data-studio-mark>Savana Ink</small></span></a>
-  <nav class="nav" aria-label="Navegação principal"><a href="#estilos">Estilos</a><a href="#portfolio">Portfólio</a><a href="#sobre">Artista</a><a href="#cicatrizacao">Cuidados</a><a class="nav-cta" href="#agendar">Monte seu briefing ↗</a></nav>
+  <a class="mark" href="#topo" aria-label="Vitor Quirino, início"><img class="mark-logo" src="assets/quirino-logo.webp" alt="Logo de Vitor Quirino"><span class="mark-copy"><strong data-content="brand">Vitor Quirino</strong><small data-content="studio" data-studio-mark>Savana Ink</small></span></a>
+  <nav class="nav" aria-label="Navegação principal"><a href="#estilos">Estilos</a><a href="#portfolio">Portfólio</a><a href="#sobre">Artista</a><a href="#cicatrizacao">Cuidados</a><a class="nav-cta" href="#agendar"><span>Monte seu briefing ↗</span></a><button class="artist-login" id="artistLoginLink" type="button" aria-label="Acesso do artista" title="Acesso do artista"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"></circle><path d="m15.4 15.4 5 5"></path></svg></button></nav>
 </div></header>
 <div class="wrap announcement" id="announcement" hidden></div>
 <main id="topo">
@@ -85,7 +186,7 @@
   </div></section>
   <section class="insta-section" id="instagram"><div class="wrap"><div class="section-head reveal"><div><p class="lab">Instagram · publicações selecionadas</p><h2>Do caderno<br><em>para o feed.</em></h2></div><p>Publicações públicas escolhidas pelo artista podem aparecer aqui como incorporações do Instagram. O portfólio também pode ser atualizado no próprio site.</p></div><div class="insta-grid" id="instagramEmbeds"><div class="insta-empty">Vitor pode selecionar publicações públicas do Instagram no acesso do artista.</div></div></div></section>
   <section class="section wrap" id="sobre"><div class="about-grid">
-    <aside class="about-aside reveal"><p class="lab" data-content="aboutAsideLabel">Conheça o artista</p><div class="initials" id="artistInitials" aria-hidden="true">VQ</div><img class="artist-portrait" id="artistPhoto" alt="Foto de Vitor Quirino" hidden><p class="hero-foot"><span data-content="brand">Vitor Quirino</span></p></aside>
+    <aside class="about-aside reveal"><p class="lab" data-content="aboutAsideLabel">Conheça o artista</p><div class="portrait-placeholder" id="artistInitials" aria-hidden="true"><svg class="portrait-figure" viewBox="0 0 240 300" role="presentation"><defs><radialGradient id="portraitAura"><stop stop-color="#47b4ff" stop-opacity=".18"/><stop offset="1" stop-color="#47b4ff" stop-opacity="0"/></radialGradient></defs><ellipse cx="120" cy="135" rx="88" ry="112" fill="url(#portraitAura)"/><path d="M120 53c-27 0-44 21-44 50 0 24 12 44 25 53-21 9-36 28-39 56m116 0c-3-28-18-47-39-56 13-9 25-29 25-53 0-29-17-50-44-50Z"/><path d="M62 218c8-28 27-44 52-44s44 16 52 44M78 101c8-31 22-46 42-46s34 15 42 46M91 117h.2m57 0h.2M108 145c8 5 16 5 24 0"/><path d="M68 227c28 10 76 10 104 0M94 201l6 17m46-17-6 17" opacity=".7"/></svg><span class="portrait-label">Foto do artista</span></div><img class="artist-portrait" id="artistPhoto" alt="Retrato de rosto de Vitor Quirino" loading="lazy" hidden><p class="hero-foot"><span data-content="brand">Vitor Quirino</span></p></aside>
     <div class="about-copy reveal reveal-delay-1"><p class="lab" data-content="aboutLabel">Uma conversa antes do primeiro traço</p><h2 data-content="artistHeading">Vitor Quirino.</h2><p class="lede" data-content="aboutQuote">“Uma tatuagem começa muito antes da máquina tocar a pele.”</p><p class="bio" data-content="bio">Artista tatuador premiado e residente no estúdio Savana Ink. Conte aqui sua trajetória, referências e processo de criação.</p><div class="award-count" id="awardsCountWrap" hidden><strong id="awardsCount">0</strong><small>prêmios e reconhecimentos</small></div><div class="award-note" data-content="awards">Premiações e trajetória: detalhes editáveis pelo artista.</div><div class="award-gallery" id="awardPhotos" aria-label="Fotos de premiações"></div><div class="insta-links social-row"><a data-social="quirino" href="https://www.instagram.com/quirinotattoo/">Acompanhar Vitor no Instagram ↗</a></div></div>
   </div></section>
   <section class="section studio-section" id="espaco"><div class="wrap studio-grid">
@@ -111,83 +212,64 @@
     <aside class="brief-side reveal reveal-delay-1"><p class="brief-label">Seu resumo</p><pre class="ficha" id="ficha"></pre><button class="btn" type="button" id="copy">Copiar briefing</button><a class="btn" data-whatsapp id="sendBrief" href="https://api.whatsapp.com/send/?phone=%2B5571993919262" style="width:100%;margin-top:9px">Abrir conversa no WhatsApp ↗</a><dl class="contact"><dt>Instagram</dt><dd><a data-social="quirino" href="https://www.instagram.com/quirinotattoo/">@quirinotattoo ↗</a></dd><dt>Estúdio</dt><dd><span data-content="studio">Savana Ink</span> · Lauro de Freitas</dd></dl></aside></div>
   </section>
 </main>
-<footer class="wrap"><p>Vitor Quirino · tatuagem autoral · Lauro de Freitas, Bahia · atendimento para maiores de 18 anos.</p><a class="panel-link" href="/admin">Área do artista ↗</a><a href="#topo">Voltar ao topo ↑</a></footer>
+<footer class="wrap"><p>Vitor Quirino · tatuagem autoral · Lauro de Freitas, Bahia · atendimento para maiores de 18 anos.</p><button class="footer-login" type="button" data-login-trigger>Acesso do artista ↗</button><a href="#topo">Voltar ao topo ↑</a></footer>
 <dialog class="album-dialog" id="styleAlbum" aria-label="Álbum de tatuagens por estilo"><div class="album-head"><h2 id="albumTitle">Álbum do estilo</h2><button class="album-close" id="albumClose" type="button">Fechar ×</button></div><div class="album-images" id="albumImages"></div><p class="album-note" id="albumNote" hidden></p></dialog>
-<script>
-(() => {
-  const $ = id => document.getElementById(id);
-  const clamp = (n, a, b) => Math.min(b, Math.max(a, n));
-  const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!prefersReduced && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); } }), { threshold: .14, rootMargin: '0px 0px -36px 0px' });
-    document.querySelectorAll('.reveal').forEach(node => observer.observe(node));
-  } else document.querySelectorAll('.reveal').forEach(node => node.classList.add('in-view'));
-
-  function openAlbum(style) {
-    const dialog=$('styleAlbum'), images=$('albumImages'), note=$('albumNote');
-    if(!dialog)return;
-    $('albumTitle').textContent=style.name+' · álbum'; images.replaceChildren();
-    const photos=Array.isArray(style.images)?style.images:[];
-    if(!photos.length){note.textContent='O artista ainda não adicionou fotos a este álbum.';note.hidden=false;}
-    else {note.hidden=true;photos.forEach(src=>{const a=document.createElement('a');a.href=src;a.target='_blank';a.rel='noreferrer';const img=document.createElement('img');img.src=src;img.alt='Trabalho de '+style.name;img.loading='lazy';a.append(img);images.append(a);});}
-    dialog.showModal();
-  }
-  $('albumClose')?.addEventListener('click',()=>$('styleAlbum').close());
-  $('styleAlbum')?.addEventListener('click',e=>{if(e.target===$('styleAlbum'))$('styleAlbum').close();});
-  document.querySelectorAll('[data-album]').forEach(b=>b.addEventListener('click',()=>openAlbum({name:b.dataset.album,images:[]})));
-
-  function renderStyles(styles) {
-    const rows = $('styleRows');
-    if (rows && Array.isArray(styles)) {
-      rows.replaceChildren();
-      if (!styles.length) { const empty=document.createElement('p');empty.className='portfolio-empty';empty.textContent='Os estilos serão atualizados em breve.';rows.append(empty); }
-      styles.forEach((item, i) => {
-        const card = document.createElement('article'); card.className = 'style-card reveal';
-        const photos=Array.isArray(item.images)?item.images:[];if(photos.length){card.classList.add('has-image');card.style.setProperty('--style-image','url("'+photos[0]+'")');}
-        const n = document.createElement('span'); n.className = 'style-number'; n.textContent = String(i + 1).padStart(2,'0') + ' / ESTILO';
-        const icon = document.createElementNS('http://www.w3.org/2000/svg','svg'); icon.setAttribute('viewBox','0 0 40 40'); icon.setAttribute('class','style-icon'); icon.setAttribute('aria-hidden','true');
-        const path = document.createElementNS('http://www.w3.org/2000/svg','path'); path.setAttribute('d','M8 31 19 9l3 8 10 3-24 11Z M19 9l9 20M12 27l14-7'); path.setAttribute('fill','none'); path.setAttribute('stroke','currentColor'); path.setAttribute('stroke-width','1.3'); path.setAttribute('stroke-linejoin','round'); icon.append(path);
-        const h = document.createElement('h3'); h.textContent = item.name;
-        const p = document.createElement('p'); p.textContent = item.description;
-        const album=document.createElement('button');album.type='button';album.className='album-button';album.textContent='Ver álbum ↗';album.addEventListener('click',()=>openAlbum(item));
-        card.append(n,icon,h,p,album); rows.append(card);
-      });
-      if (!prefersReduced && 'IntersectionObserver' in window) { const o = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in-view');o.unobserve(e.target)} }),{threshold:.1}); rows.querySelectorAll('.reveal').forEach(n=>o.observe(n)); }
-    }
-    const select = $('f-estilo');
-    if (select && Array.isArray(styles)) { const options=styles.map(x => { const o=document.createElement('option');o.value=x.name;o.textContent=x.name;return o; });if(!options.length){const o=document.createElement('option');o.value='';o.textContent='A combinar com o artista';options.push(o);}select.replaceChildren(...options); }
-  }
-  async function loadContent() {
-    try {
-      const r=await fetch('/api/content'); if(!r.ok)return; const d=await r.json();
-  document.querySelectorAll('[data-content]').forEach(el=>{const k=el.dataset.content;if(typeof d[k]==='string')el.textContent=d[k]});
-      document.querySelectorAll('[data-ticker]').forEach(el=>{if(d.ticker)el.textContent=d.ticker;});
-      document.querySelectorAll('[data-social]').forEach(a=>{const k=a.dataset.social,url=d.socials?.[k];if(url){a.href=url;a.hidden=false;}else a.hidden=true;});
-      document.querySelectorAll('[data-whatsapp]').forEach(a=>{const phone=String(d.phone||'5571993919262').replace(/\D/g,'');a.href='https://api.whatsapp.com/send/?phone='+encodeURIComponent(phone)+'&text='+encodeURIComponent('Olá, Vitor! Quero conversar sobre uma tatuagem.');});
-      if(d.announcement){const announcement=$('announcement');announcement.textContent=d.announcement;announcement.hidden=false;}
-      document.title=(d.brand||'Vitor Quirino')+' · Tatuagem autoral';
-      let mark=document.querySelector('.mark-symbol'),markImage=document.querySelector('.mark-logo');if(d.logo){if(mark){markImage=document.createElement('img');markImage.className='mark-logo';markImage.alt='Logo '+(d.studio||'estúdio');mark.replaceWith(markImage);}if(markImage)markImage.src=d.logo;}else if(markImage){mark=document.createElement('span');mark.className='mark-symbol';mark.textContent=d.brandMark||'VQ';markImage.replaceWith(mark);}else if(mark)mark.textContent=d.brandMark||'VQ';
-      const studioMark=document.querySelector('[data-studio-mark]');if(studioMark)studioMark.hidden=d.showStudioName===false;
-      if(d.artistPhoto){const image=$('artistPhoto');if(image){image.src=d.artistPhoto;image.hidden=false;$('artistInitials').hidden=true;}}
-      if(Number(d.awardsCount)>0){$('awardsCount').textContent=String(d.awardsCount);$('awardsCountWrap').hidden=false;}
-      const awardPhotos=$('awardPhotos');if(awardPhotos&&Array.isArray(d.awardPhotos)){awardPhotos.replaceChildren();d.awardPhotos.forEach(src=>{const img=document.createElement('img');img.src=src;img.alt='Prêmio ou reconhecimento de Vitor Quirino';img.loading='lazy';awardPhotos.append(img);});}
-      const map=document.querySelector('.map-frame');if(map&&d.address)map.src='https://www.google.com/maps?q='+encodeURIComponent('Savana Ink Spetto Tattoo '+d.address)+'&output=embed';
-      const grid=$('portfolioGrid'); if(grid&&Array.isArray(d.portfolio)&&d.portfolio.length){grid.replaceChildren();d.portfolio.forEach(item=>{const a=document.createElement('a');a.className='portfolio-card';a.href=item.link||item.src;a.target='_blank';a.rel='noreferrer';const img=document.createElement('img');img.src=item.src;img.alt=item.title||'Trabalho de tatuagem';img.loading='lazy';const meta=document.createElement('div');meta.className='pc-meta';const title=document.createElement('span');title.textContent=item.title||'Trabalho';const style=document.createElement('span');style.textContent=item.style||'';meta.append(title,style);a.append(img,meta);grid.append(a);});}
-      const photos=$('studioPhotos');if(photos&&Array.isArray(d.studioPhotos)){photos.replaceChildren();d.studioPhotos.forEach(src=>{const im=document.createElement('img');im.src=src;im.alt='Ambiente do estúdio';im.loading='lazy';photos.append(im);});}
-      const instagram=$('instagramEmbeds');if(instagram&&Array.isArray(d.instagramPosts)&&d.instagramPosts.length){instagram.replaceChildren();d.instagramPosts.forEach(url=>{const match=String(url).match(/instagram\.com\/(p|reel|tv)\/([A-Za-z0-9_-]+)/);if(!match)return;const frame=document.createElement('iframe');frame.className='insta-embed';frame.src='https://www.instagram.com/'+match[1]+'/'+match[2]+'/embed/';frame.title='Publicação do Instagram';frame.loading='lazy';frame.setAttribute('allowtransparency','true');frame.setAttribute('frameborder','0');frame.setAttribute('scrolling','no');instagram.append(frame);});if(!instagram.children.length)instagram.innerHTML='<div class="insta-empty">Vitor pode selecionar publicações públicas do Instagram pelo acesso do artista.</div>';}
-      const care=$('careItems');if(care&&Array.isArray(d.careItems)){care.replaceChildren();d.careItems.forEach((x,i)=>{const item=document.createElement('article');item.className='care-card reveal';const num=document.createElement('span');num.textContent=String(i+1).padStart(2,'0')+' / '+(x.label||'CUIDADO');const title=document.createElement('h3');title.textContent=x.title;const p=document.createElement('p');p.textContent=x.text;item.append(num,title,p);care.append(item);});if(!prefersReduced&&'IntersectionObserver'in window){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');o.unobserve(e.target)}}),{threshold:.1});care.querySelectorAll('.reveal').forEach(n=>o.observe(n));}else care.querySelectorAll('.reveal').forEach(n=>n.classList.add('in-view'));}
-      renderStyles(d.styles);
-      const locations=$('f-local');if(locations&&Array.isArray(d.bodyLocations)){const placeholder=document.createElement('option');placeholder.textContent='Selecione uma parte do corpo';placeholder.value='';placeholder.disabled=true;placeholder.selected=true;locations.replaceChildren(placeholder,...d.bodyLocations.map(v=>{const o=document.createElement('option');o.textContent=v;return o;}));}
-      const methods=$('f-turno');if(methods&&Array.isArray(d.contactOptions)){const options=d.contactOptions.map(v=>{const o=document.createElement('option');o.textContent=v;return o;});if(!options.length){const o=document.createElement('option');o.textContent='Sem preferência';options.push(o);}methods.replaceChildren(...options);}
-      const list=$('reviewList');if(list&&Array.isArray(d.reviews)){list.replaceChildren();if(!d.reviews.length){const empty=document.createElement('p');empty.className='review-empty';empty.textContent='Ainda não há avaliações publicadas.';list.append(empty);}d.reviews.forEach(x=>{const card=document.createElement('article');card.className='review-item';const stars=document.createElement('b');stars.textContent='★'.repeat(clamp(Number(x.rating)||5,1,5));const p=document.createElement('p');p.textContent=x.text;const small=document.createElement('small');small.textContent=x.name;card.append(stars,p);if(x.photo){const img=document.createElement('img');img.src=x.photo;img.alt='Foto compartilhada com a avaliação';img.loading='lazy';img.style.cssText='max-width:190px;max-height:190px;object-fit:cover;margin:10px 0';card.append(img);}card.append(small);list.append(card);});}
-    } catch {}
-  }
-  loadContent();
-  $('reviewForm')?.addEventListener('submit',async e=>{e.preventDefault();const f=e.currentTarget,status=$('reviewStatus');status.textContent='Enviando…';const body=new FormData();body.set('name',$('reviewName').value);body.set('rating',$('reviewRating').value);body.set('text',$('reviewText').value);body.set('consent',$('reviewConsent').checked?'on':'');if($('reviewPhoto').files[0])body.set('photo',$('reviewPhoto').files[0]);try{const r=await fetch('/api/reviews',{method:'POST',body});status.textContent=r.ok?'Obrigado! Sua avaliação já está pública.':'Não foi possível enviar agora. Tente novamente.';if(r.ok){f.reset();await loadContent();}}catch{status.textContent='Não foi possível enviar agora. Tente novamente.';}});
-  const fields={nome:$('f-nome'),ideia:$('f-ideia'),local:$('f-local'),estilo:$('f-estilo'),tam:$('f-tam'),turno:$('f-turno'),prim:$('f-prim')};
-  function updateBrief(){if(!fields.nome)return;const tam=Number(fields.tam.value);$('o-tam').textContent=tam+' cm';const summary='VITOR QUIRINO · BRIEFING DE TATUAGEM\n\nNome: '+(fields.nome.value.trim()||'(preencha)')+'\nIdeia: '+(fields.ideia.value.trim()||'(descreva)')+'\nLocal do corpo: '+fields.local.value+'\nTamanho aproximado: '+tam+' cm\nEstilo: '+fields.estilo.options[fields.estilo.selectedIndex].text+'\nPrimeira tatuagem: '+(fields.prim.checked?'sim':'não')+'\nPreferência de contato: '+fields.turno.value;$('ficha').textContent=summary;const send=$('sendBrief');if(send){const text='Olá, Vitor! Quero conversar sobre uma tatuagem.\n\n'+summary;const phone=send.href.match(/phone=([^&]+)/)?.[1]||'%2B5571993919262';send.href='https://api.whatsapp.com/send/?phone='+phone+'&text='+encodeURIComponent(text);}}
-  Object.values(fields).forEach(el=>{el?.addEventListener('input',updateBrief);el?.addEventListener('change',updateBrief);});$('form')?.addEventListener('submit',e=>e.preventDefault());updateBrief();
-  $('copy')?.addEventListener('click',async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText($('ficha').textContent);b.textContent='Briefing copiado';}catch{const range=document.createRange();range.selectNodeContents($('ficha'));const selection=getSelection();selection.removeAllRanges();selection.addRange(range);b.textContent='Texto selecionado: copie com Ctrl+C';}setTimeout(()=>b.textContent='Copiar briefing',2400);});
-})();
-</script>
-</body></html>
+<dialog class="site-dialog login-dialog" id="loginDialog" aria-labelledby="loginTitle">
+  <button class="dialog-x" type="button" data-close-login aria-label="Fechar">×</button>
+  <p class="lab">Acesso reservado</p><h2 id="loginTitle">Área do artista</h2>
+  <p>Entre com o e-mail autorizado de Vitor Quirino para atualizar este site.</p>
+  <form id="loginForm" class="editor-form">
+    <label class="fld">E-mail<input id="artistEmail" type="email" autocomplete="username" required></label>
+    <label class="fld">Senha<input id="artistPassword" type="password" autocomplete="current-password" minlength="6" required></label>
+    <button class="btn" type="submit">Entrar</button>
+  </form>
+  <button class="text-button" id="createArtistAccount" type="button">Primeiro acesso? Criar senha</button>
+  <button class="text-button" id="forgotPassword" type="button">Esqueci minha senha</button>
+  <p class="admin-notice" id="loginStatus" aria-live="polite"></p>
+</dialog>
+<dialog class="site-dialog editor-dialog" id="editorDialog" aria-labelledby="editorTitle">
+  <header class="editor-header"><div><p class="lab">Atualizações em tempo real</p><h2 id="editorTitle">Editar o site</h2></div><div><button id="logoutArtist" class="text-button" type="button">Sair</button><button id="closeEditor" class="dialog-x" type="button" aria-label="Fechar editor">×</button></div></header>
+  <p class="editor-hint">Salve o texto para atualizar o site. As fotos são reduzidas para carregar mais rápido.</p>
+  <form id="artistForm" class="editor-form">
+    <details open><summary>Marca e abertura</summary><div class="editor-grid">
+      <label class="fld">Nome do artista<input name="brand" maxlength="80"></label><label class="fld">Nome do estúdio<input name="studio" maxlength="80"></label>
+      <label class="fld">Iniciais da marca<input name="brandMark" maxlength="8"></label><label class="check-row"><input name="showStudioName" type="checkbox"> Mostrar o nome do estúdio ao lado da marca</label>
+      <label class="fld wide">Título principal<input name="heroTitle" maxlength="100"></label><label class="fld wide">Texto de abertura<textarea name="heroIntro" maxlength="400" rows="3"></textarea></label>
+      <label class="fld wide">Letreiro em movimento<textarea name="ticker" maxlength="500" rows="2"></textarea></label><label class="fld wide">Aviso temporário (deixe vazio para ocultar)<input name="announcement" maxlength="180"></label>
+      <label class="fld wide">Outros textos da página: um por linha, no formato chave | texto<textarea name="extraTexts" rows="7" placeholder="heroEyebrow | Artista residente · Lauro de Freitas, Bahia"></textarea></label>
+    </div></details>
+    <details><summary>Artista, trajetória e prêmios</summary><div class="editor-grid">
+      <label class="fld">Título da seção<input name="artistHeading" maxlength="80"></label><label class="fld">Frase em destaque<input name="aboutQuote" maxlength="180"></label>
+      <label class="fld wide">Sobre o Vitor<textarea name="bio" maxlength="1800" rows="5"></textarea></label><label class="fld wide">Prêmios e trajetória<textarea name="awards" maxlength="1000" rows="3"></textarea></label>
+      <label class="fld">Quantidade de prêmios<input name="awardsCount" type="number" min="0" max="999"></label>
+    </div></details>
+    <details><summary>Estilos, portfólio e Instagram</summary><div class="editor-grid">
+      <label class="fld">Título dos estilos<input name="stylesHeading" maxlength="80"></label><label class="fld">Texto dos estilos<input name="stylesIntro" maxlength="300"></label>
+      <label class="fld wide">Estilos: um por linha, no formato Nome | descrição<textarea name="styles" rows="6" placeholder="Blackwork | Contraste e presença gráfica."></textarea></label>
+      <label class="fld">Título do portfólio<input name="portfolioHeading" maxlength="80"></label><label class="fld">Texto do portfólio<input name="portfolioIntro" maxlength="300"></label>
+      <label class="fld wide">Links de publicações públicas do Instagram: um por linha<textarea name="instagramPosts" rows="3" placeholder="https://www.instagram.com/p/…"></textarea></label>
+    </div></details>
+    <details><summary>Estúdio, endereço e contato</summary><div class="editor-grid">
+      <label class="fld">Título do espaço<input name="studioHeading" maxlength="80"></label><label class="fld">Texto sobre o espaço<input name="studioIntro" maxlength="500"></label>
+      <label class="fld wide">Endereço completo<input name="address" maxlength="180"></label><label class="fld">Horários de atendimento<input name="hours" maxlength="180"></label><label class="fld">WhatsApp com DDI e DDD<input name="phone" inputmode="tel" maxlength="18"></label>
+      <label class="fld">Instagram do Vitor<input name="socialQuirino" type="url"></label><label class="fld">Instagram do estúdio<input name="socialStudio" type="url"></label><label class="fld">Instagram do Spetto<input name="socialSpetto" type="url"></label>
+    </div></details>
+    <details><summary>Cuidados e briefing</summary><div class="editor-grid">
+      <label class="fld">Título dos cuidados<input name="careHeading" maxlength="100"></label><label class="fld">Introdução dos cuidados<input name="careIntro" maxlength="300"></label>
+      <label class="fld wide">Cuidados: um por linha, formato RÓTULO | título | explicação<textarea name="careItems" rows="6"></textarea></label>
+      <label class="fld">Título do briefing<input name="briefHeading" maxlength="100"></label><label class="fld">Introdução do briefing<input name="briefIntro" maxlength="300"></label>
+      <label class="fld wide">Partes do corpo: uma por linha<textarea name="bodyLocations" rows="3"></textarea></label><label class="fld wide">Preferências de contato: uma por linha<textarea name="contactOptions" rows="3"></textarea></label>
+    </div></details>
+    <details><summary>Avaliações</summary><div id="adminReviews" class="review-list"></div><p class="editor-hint">As avaliações enviadas pelos clientes ficam públicas. Você pode removê-las por aqui.</p></details>
+    <details><summary>Fotos, logo e capas</summary><div class="editor-grid">
+      <label class="fld">O que está enviando<select id="mediaKind"><option value="portfolio">Portfólio</option><option value="style">Foto de um estilo</option><option value="studio">Ambiente do estúdio</option><option value="award">Prêmio</option><option value="artist">Foto do Vitor</option><option value="hero">Imagem de abertura</option><option value="logo">Logo do estúdio/artista</option></select></label>
+      <label class="fld" id="styleChoice" hidden>Álbum do estilo<select id="mediaStyle"></select></label>
+      <label class="fld">Legenda ou nome<input id="mediaTitle" maxlength="70" placeholder="Opcional"></label>
+      <label class="fld">Escolher imagem<input id="mediaFile" type="file" accept="image/*"></label>
+      <div class="wide"><button type="button" class="btn secondary" id="uploadMedia">Enviar foto ↗</button><p id="mediaStatus" class="admin-notice" aria-live="polite"></p></div>
+      <div class="wide editor-media-grid" id="mediaList"></div>
+    </div></details>
+    <div class="editor-save"><p class="admin-notice" id="saveStatus" aria-live="polite"></p><button class="btn" type="submit">Salvar alterações</button></div>
+  </form>
+</dialog>
+\n<script type="module" src="app.js"></script>\n<script>const l=document.getElementById("siteLoader");const closeLoader=()=>l&&l.classList.add("is-exiting");window.addEventListener("load",()=>setTimeout(closeLoader,300),{once:true});setTimeout(closeLoader,1750);</script>\n</body></html>
