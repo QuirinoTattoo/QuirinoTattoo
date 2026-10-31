@@ -275,6 +275,6 @@
 </dialog>
 
 <script>(function(){document.addEventListener("click",function(e){var close=e.target.closest("[data-close-login]");if(close){e.preventDefault();var d=document.getElementById("loginDialog");if(d&&d.open)d.close();e.stopImmediatePropagation();return;}var trigger=e.target.closest("#artistLoginLink,[data-login-trigger]");if(!trigger)return;e.preventDefault();var dialog=document.getElementById("loginDialog");if(dialog&&!dialog.open)dialog.showModal();e.stopImmediatePropagation();},true);var form=document.getElementById("loginForm");if(form)form.addEventListener("submit",function(e){if(window.vqFirebaseReady)return;e.preventDefault();var status=document.getElementById("loginStatus");if(status)status.textContent="O acesso não carregou. Atualize a página e tente novamente.";},true);})();</script>
-<script type="module" src="app.js"></script>
+<script type="module" src="app.js?v=3efe44d"></script>
 <script>const l=document.getElementById("siteLoader");const closeLoader=()=>l&&l.classList.add("is-exiting");window.addEventListener("load",()=>setTimeout(closeLoader,300),{once:true});setTimeout(closeLoader,1750);</script>
 </body></html>
