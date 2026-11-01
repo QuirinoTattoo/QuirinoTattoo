@@ -169,12 +169,63 @@
     .hdr,.site-loader,.artist-ribbon,dialog,footer{z-index:10003}
     @media(max-width:700px){.ink-ambient{width:42vw;opacity:.3}.ink-ambient-a{right:-15vw;top:20vh}.ink-ambient-b{left:-16vw;top:155vh}.portfolio-card,.portfolio-card img{min-height:235px}.artist-portrait{width:min(66vw,238px)}}
     @media(prefers-reduced-motion:reduce){.hero-visual img,.style-card,.style-icon,.care-card,.artist-portrait,.portfolio-card,.portfolio-card img,.ink-ambient,.ink-ambient .draw,.scroll-ink-progress{animation:none!important;transition:none!important}.portfolio-card{opacity:1;transform:none}.ink-ambient{opacity:.1}}  </style>
+<style id="motion-system">
+    .mark{position:relative;isolation:isolate;transition:filter .35s,transform .35s}
+    .mark:hover,.mark:focus-visible{filter:drop-shadow(0 0 16px rgba(85,177,239,.25))}
+    .mark:focus-visible{outline:1px solid #78c7f5;outline-offset:7px}
+    .mark-logo{transform-origin:center;transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .45s}
+    .mark:hover .mark-logo,.mark:focus-visible .mark-logo{animation:logoPulse .85s ease-in-out 1;transform:rotate(-7deg) scale(1.08);filter:drop-shadow(0 0 13px rgba(84,181,247,.8))}
+    .mark-copy strong{transition:letter-spacing .45s,color .45s}
+    .mark:hover .mark-copy strong,.mark:focus-visible .mark-copy strong{letter-spacing:.15em;color:#fff}
+    @keyframes logoPulse{50%{filter:drop-shadow(0 0 20px rgba(84,181,247,1))}}
+    .hero-copy>*{opacity:0;transform:translateY(18px);animation:heroTextIn .8s cubic-bezier(.2,.7,.2,1) forwards}
+    .hero-copy>.eyebrow{animation-delay:.12s}.hero-copy>h1{animation-delay:.24s}.hero-copy>.hero-lede{animation-delay:.36s}.hero-copy>.hero-actions{animation-delay:.48s}.hero-copy>.hero-foot{animation-delay:.6s}
+    @keyframes heroTextIn{to{opacity:1;transform:translateY(0)}}
+    .reveal{filter:blur(4px);transition:opacity .85s ease,transform .9s cubic-bezier(.2,.7,.2,1),filter .85s ease}
+    .reveal.in-view{filter:blur(0)}
+    .section-head .lab:after,.care-intro .lab:after,.brief-head .lab:after{content:"";display:inline-block;width:0;height:1px;margin-inline-start:10px;vertical-align:middle;background:linear-gradient(90deg,var(--accent2),transparent);transition:width .7s .32s cubic-bezier(.2,.7,.2,1)}
+    .section-head.in-view .lab:after,.care-intro.in-view .lab:after,.brief-head.in-view .lab:after{width:32px}
+    .style-card{overflow:hidden}
+    .style-card:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 15%,rgba(224,157,120,.11) 48%,transparent 78%);transform:translateX(-110%);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+    .style-card:hover:before{transform:translateX(110%)}
+    .style-icon path{stroke-dasharray:130;stroke-dashoffset:130;transition:stroke-dashoffset 1s .15s cubic-bezier(.2,.7,.2,1)}
+    .style-card.in-view .style-icon path{stroke-dashoffset:0}
+    .portfolio-card{transform:translateY(10px);transition:transform .7s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+    .portfolio-card.in-view{transform:none}
+    .portfolio-card.in-view img{animation:photoFade .85s cubic-bezier(.2,.7,.2,1) both}
+    .studio-copy.in-view .studio-fact{animation:detailIn .65s cubic-bezier(.2,.7,.2,1) both}
+    .studio-copy.in-view .studio-fact:nth-child(1){animation-delay:.12s}.studio-copy.in-view .studio-fact:nth-child(2){animation-delay:.24s}
+    .studio-copy.in-view .studio-photos img,.about-copy.in-view .award-gallery img{animation:photoFade .85s cubic-bezier(.2,.7,.2,1) both}
+    .studio-photos img:nth-child(2),.award-gallery img:nth-child(2){animation-delay:.12s}.studio-photos img:nth-child(3),.award-gallery img:nth-child(3){animation-delay:.24s}
+    @keyframes photoFade{from{opacity:.15;clip-path:inset(8% 0 0)}to{opacity:1;clip-path:inset(0)}}
+    @keyframes detailIn{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:none}}
+    .care-card{position:relative;overflow:hidden}
+    .care-card:before{content:"";position:absolute;top:0;left:0;width:32px;height:1px;background:var(--accent2);transform:scaleX(0);transform-origin:left;transition:transform .6s .2s}
+    .care-card.in-view:before{transform:scaleX(1)}
+    .reviews .reveal.in-view .review-form>*{animation:fieldIn .55s cubic-bezier(.2,.7,.2,1) both}
+    .reviews .reveal.in-view .review-form>*:nth-child(2){animation-delay:.08s}.reviews .reveal.in-view .review-form>*:nth-child(3){animation-delay:.16s}.reviews .reveal.in-view .review-form>*:nth-child(4){animation-delay:.24s}.reviews .reveal.in-view .review-form>*:nth-child(5){animation-delay:.32s}.reviews .reveal.in-view .review-form>*:nth-child(6){animation-delay:.4s}
+    .review-item{animation:fieldIn .65s cubic-bezier(.2,.7,.2,1) both}
+    .review-item:nth-child(2){animation-delay:.1s}.review-item:nth-child(3){animation-delay:.2s}
+    .brief-side.in-view .brief-label,.brief-side.in-view .ficha,.brief-side.in-view .btn,.brief-side.in-view .contact{animation:fieldIn .65s cubic-bezier(.2,.7,.2,1) both}
+    .brief-side.in-view .ficha{animation-delay:.1s}.brief-side.in-view .btn{animation-delay:.2s}.brief-side.in-view .contact{animation-delay:.3s}
+    @keyframes fieldIn{from{opacity:0;clip-path:inset(0 0 12%)}to{opacity:1;clip-path:inset(0)}}
+    .site-dialog[open]{animation:dialogIn .42s cubic-bezier(.2,.7,.2,1) both}
+    @keyframes dialogIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+    .ticker-site{position:relative}
+    .ticker-site:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 35%,rgba(220,157,124,.075) 50%,transparent 65%);transform:translateX(-100%);animation:tickerGlow 16s ease-in-out infinite}
+    @keyframes tickerGlow{0%,35%{transform:translateX(-100%)}70%,100%{transform:translateX(100%)}}
+    .btn{position:relative;overflow:hidden}
+    .btn:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.22) 50%,transparent 70%);transform:translateX(-120%);transition:transform .75s}
+    .btn:hover:after,.btn:focus-visible:after{transform:translateX(120%)}
+    @media(max-width:700px){.hero-copy>*{animation-duration:.65s}.hero-visual{min-height:410px}.mark:hover .mark-logo{transform:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;filter:none;transform:none}.portfolio-card{transform:none}}
+  </style>
 </head>
 <body>
 <div class="logo-watermark" aria-hidden="true"></div><div class="scroll-ink-progress" id="scrollInk" aria-hidden="true"></div><svg class="ink-ambient ink-ambient-a" viewBox="0 0 180 260" aria-hidden="true"><path class="draw" d="M92 244C77 205 102 181 81 148S55 104 87 72 121 34 105 12M83 150c-34 1-54-19-65-49 31-2 53 16 65 49Zm4-68c-2-32 13-55 38-70 8 29-6 54-38 70Zm-3 107c-31 11-52 0-70-24 28-12 52-5 70 24Zm17-57c-1-29 14-48 39-60 6 27-9 47-39 60Z"/></svg><svg class="ink-ambient ink-ambient-b" viewBox="0 0 180 260" aria-hidden="true"><path class="draw" d="M88 249C108 210 75 183 99 146s33-50 2-81S63 31 82 10M97 153c33-2 53-21 62-52-30 0-51 18-62 52Zm2-72c0-31-16-54-41-68-6 29 8 53 41 68Zm-5 108c30 12 52 2 71-21-28-13-52-8-71 21Z"/><circle cx="90" cy="131" r="29" class="draw"/></svg>
 <div class="site-loader" id="siteLoader" aria-hidden="false"><div class="loader-inner"><svg class="loader-art" viewBox="0 0 180 160" role="presentation"><path d="M90 18c-38 0-67 26-67 65 0 26 12 44 30 53l4 19h66l4-19c18-9 30-27 30-53 0-39-29-65-67-65Z"/><path class="skull-detail" d="M50 79c0-14 9-24 22-24s22 10 22 24-9 23-22 23-22-9-22-23Zm36 0c0-14 9-24 22-24s22 10 22 24-9 23-22 23-22-9-22-23ZM80 103l10 12 10-12m-24 22v17m14-17v17m14-17v17"/><path class="tattoo-stroke" d="M31 33c9 4 15 11 18 20m83 83c9-8 18-10 27-8m-98-88c8-5 17-8 27-9"/><path class="star-glint" d="M148 27v20m-10-10h20M25 112v16m-8-8h16"/></svg><p class="loader-title">Vitor Quirino</p><span class="loader-caption">Preparando a arte</span><div class="loader-line"></div></div></div>
 <header class="hdr"><div class="wrap hdr-in">
-  <a class="mark" href="#topo" aria-label="Vitor Quirino, início"><img class="mark-logo" src="assets/quirino-logo.svg" alt="Logo de Vitor Quirino"><span class="mark-copy"><strong data-content="brand">Vitor Quirino</strong><small data-content="studio" data-studio-mark>Savana Ink</small></span></a>
+  <a class="mark" href="#topo" data-login-trigger aria-label="Abrir login do artista" title="Acesso do artista"><img class="mark-logo" src="assets/quirino-logo.svg" alt="Logo de Vitor Quirino"><span class="mark-copy"><strong data-content="brand">Vitor Quirino</strong><small data-content="studio" data-studio-mark>Savana Ink</small></span></a>
   <nav class="nav" aria-label="Navegação principal"><a href="#estilos">Estilos</a><a href="#portfolio">Portfólio</a><a href="#sobre">Artista</a><a href="#cicatrizacao">Cuidados</a><a class="nav-cta" href="#agendar"><span>Monte seu briefing ↗</span></a><button class="artist-login" id="artistLoginLink" type="button" aria-label="Acesso do artista" title="Acesso do artista"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"></circle><path d="m15.4 15.4 5 5"></path></svg></button></nav>
 </div></header>
 <div class="wrap announcement" id="announcement" hidden></div>
@@ -254,7 +305,7 @@
   <p class="lab">Acesso reservado</p><h2 id="loginTitle">Área do artista</h2>
   <p>Entre com o e-mail autorizado de Vitor Quirino para atualizar este site.</p>
   <form id="loginForm" class="editor-form">
-    <label class="fld">E-mail<input id="artistEmail" type="email" autocomplete="username" required></label>
+    <label class="fld">E-mail<input id="artistEmail" type="email" autocomplete="username" placeholder="E-mail autorizado" autofocus required></label>
     <label class="fld">Senha<input id="artistPassword" type="password" autocomplete="current-password" minlength="6" required></label>
     <button class="btn" type="submit">Entrar</button>
   </form>
